@@ -18,6 +18,7 @@ public:
     void readFromFile();
     void update();
     void draw();
+    void Toggle_show();
 
     float alpha[2];
     int prevSize[2];
@@ -33,5 +34,6 @@ private:
     string path[2];//
     vector<vector<string> > outs; //0 stdout 1 errout
     int num_line = 22;
+    bool show  = true;
     
 };

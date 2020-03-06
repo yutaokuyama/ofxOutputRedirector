@@ -126,3 +126,7 @@ void ofxOutputRedirector::readFromFile(){
 }
 
 
+
+void ofxOutputRedirector::Toggle_show(){
+    show = !show;
+}
