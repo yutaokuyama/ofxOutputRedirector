@@ -12,7 +12,7 @@
 
 class ofxOutputRedirector{
 public:
-    
+    static const int bufNum = 3;
     void begin();
     void end();
     void readFromFile();
