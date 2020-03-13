@@ -25,13 +25,13 @@ public:
     
     
 private:
-    ofstream global_ofs[2];
+    ofstream global_ofs[bufNum];
     streambuf* oldCoutBuf;
     streambuf* oldCerrBuf;
     
     struct stat buf_stat[2];
     time_t  last_size;
-    string path[2];//
+    string path[bufNum];//
     vector<vector<string> > outs; //0 stdout 1 errout
     int num_line = 22;
     bool show  = true;

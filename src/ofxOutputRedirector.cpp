@@ -15,15 +15,17 @@ void ofxOutputRedirector::begin(){
     
     path[0] =ofFilePath::getAbsolutePath("cout.txt",true);
     path[1] =ofFilePath::getAbsolutePath("cerr.txt",true);
+     path[2] =ofFilePath::getAbsolutePath("clog.txt",true);
     global_ofs[0].open(path[0],std::ios::trunc);
     global_ofs[1].open(path[1],std::ios::trunc);
-    
+     global_ofs[2].open(path[2],std::ios::trunc);
     stat(path[0] .c_str(), &buf_stat[0]);
     stat(path[1] .c_str(), &buf_stat[1]);
     cout<<"cout will redirect to /bin/data/cout.txt"<<endl;
     cout<<"cerr will redirect to /bin/data/cerr.txt"<<endl;
     oldCoutBuf = cout.rdbuf(global_ofs[0].rdbuf());
     oldCerrBuf =cerr.rdbuf(global_ofs[1].rdbuf());
+    oldCerrBuf =clog.rdbuf(global_ofs[1].rdbuf());
     for(int i= 0;i<2;i++){
         alpha[i] = 1.0;
     }
