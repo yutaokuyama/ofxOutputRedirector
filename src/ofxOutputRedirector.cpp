@@ -38,6 +38,10 @@ void ofxOutputRedirector::end(){
 }
 void ofxOutputRedirector::update(){
     
+
+}
+
+void ofxOutputRedirector::draw(){
     
     outs[0].clear();
     outs[1].clear();
@@ -45,9 +49,7 @@ void ofxOutputRedirector::update(){
     for(int i= 0;i<2;i++){
         alpha[i] += (0.0-alpha[i])/10.0;
     }
-}
-
-void ofxOutputRedirector::draw(){
+    
     ofEnableAlphaBlending();
     if(show){
         ofSetColor(ofFloatColor(0.3,0.3,0.3,0.3));
